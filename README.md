@@ -17,4 +17,4 @@ There is even a separated interface to handle clicks on the cards.
 
 The click opens up a new Activity that displays the image and the data from the single entrie in the RecyclerView.
 
-[Credits and inspiration for this implementatio to: Coding in Flow](https://codinginflow.com/tutorials/android/recyclerview-cardview/part-4-onitemclicklistener)
+Credits and inspiration for this implementation to:[Coding in Flow](https://codinginflow.com/tutorials/android/recyclerview-cardview/part-4-onitemclicklistener)
