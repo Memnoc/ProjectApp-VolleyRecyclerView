@@ -1,7 +1,7 @@
 # ProjectApp-VolleyRecyclerView
 
-[MainActivity](https://i.imgur.com/2hsalhS.png)
-[GalleryActivity](https://i.imgur.com/kH5M7SF.png)
+![alt-text](https://i.imgur.com/2hsalhS.png)
+![alt-text](https://i.imgur.com/kH5M7SF.png)
 
 This app consumes a public API called [Pixabay](https://pixabay.com/api/docs/#api_search_images) 
 Other libraries used in this project are:
