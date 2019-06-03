@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.widget.LinearLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -28,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public static final String EXTRA_AUTHOR = "authorName";
     public static final String EXTRA_LIKES = "likesCount";
 
+    private static final int NUM_COLUMNS = 2;
+
     private RecyclerView recyclerView;
     private Adapter adapter;
     private ArrayList<Item> itemList;
@@ -41,7 +45,9 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         recyclerView = findViewById(R.id.main_container);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(NUM_COLUMNS, LinearLayout.VERTICAL);
+        recyclerView.setLayoutManager(staggeredGridLayoutManager);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         itemList = new ArrayList<>();
 
@@ -51,7 +57,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
     private void parseJson() {
         String apiKey = getString(R.string.pixabayKey);
-        String url = "https://pixabay.com/api/?key=" + apiKey + "&q=sharks&image_type=photo&pretty=true";
+//        String url = "https://pixabay.com/api/?key=" + apiKey + "&q=sharks&image_type=photo&pretty=true";
+        String url = "https://pixabay.com/api/?key=" + apiKey + "&q=photos&image_type=photo&pretty=true&per_page=50";
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
                 new Response.Listener<JSONObject>() {
